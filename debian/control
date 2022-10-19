@@ -1,0 +1,25 @@
+Source: sbsigntool
+Section: utils
+Priority: optional
+Maintainer: Debian EFI Team <debian-efi@lists.debian.org>
+Uploaders: Pierre Chifflier <pollux@debian.org>,
+	   Steve McIntyre <93sam@debian.org>
+Build-Depends: debhelper-compat (= 13),
+  gcc-multilib [amd64 i386 kfreebsd-amd64],
+  binutils-dev,
+  libssl-dev,
+  openssl,
+  pkg-config,
+  automake,
+  uuid-dev,
+  help2man,
+  gnu-efi
+Standards-Version: 4.5.1
+
+Package: sbsigntool
+Architecture: any-amd64 any-i386 arm64 armhf any-riscv64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: foreign
+Description: Tools to manipulate signatures on UEFI binaries and drivers
+ This package installs tools which can cryptographically sign EFI binaries and
+ drivers.

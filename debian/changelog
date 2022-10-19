@@ -1,0 +1,107 @@
+sbsigntool (0.9.4-3.1) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian EFI Team <debian-efi@lists.debian.org>  Mon, 11 Jul 2022 17:01:28 +0800
+
+sbsigntool (0.9.4-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload
+
+  [ Simon Chopin ]
+  * Disable -Werror on deprecation warnings for the OpenSSL transition
+    (Closes: #1006575)
+  * Apply patch to fix the OpenSSL3 build (LP: #1946193)
+
+ -- Bastian Germann <bage@debian.org>  Sat, 04 Jun 2022 11:37:27 +0000
+
+sbsigntool (0.9.4-3) unstable; urgency=medium
+
+  * Team upload
+  * Upload to unstable
+
+ -- Julian Andres Klode <jak@debian.org>  Tue, 14 Sep 2021 08:39:01 +0200
+
+sbsigntool (0.9.4-2) experimental; urgency=medium
+
+  * Add patch for RISC-V support.
+    Thanks to Heinrich Schuchardt for the patch (LP: #1938438)
+
+ -- Julian Andres Klode <jak@debian.org>  Mon, 02 Aug 2021 14:02:22 +0200
+
+sbsigntool (0.9.4-1) experimental; urgency=medium
+
+  * Team upload
+  * debian/rules: Add reproducible get-orig-source target
+  * New upstream version 0.9.4
+  * Drop fix_checksum_calc.patch, applied upstream
+  * Use debhelper-compat (= 13) instead of debian/compat 9
+  * Remove explicit dh-autoreconf dependency
+  * Bump Standards-Version to 4.5.1
+  * Add any-riscv64 to Architecture
+
+ -- Julian Andres Klode <jak@debian.org>  Mon, 02 Aug 2021 13:31:02 +0200
+
+sbsigntool (0.9.2-2) unstable; urgency=medium
+
+  * Change Maintainer to be the EFI team, with Pierre and me as Uploaders
+  * Remove the old alignment patch, looks to be un-needed now
+  * Fix PE/COFF checksum calculation - only count the cert_table
+    struct once when performing the calculation and counting buffer
+    sizes.
+
+ -- Steve McIntyre <93sam@debian.org>  Fri, 19 Apr 2019 23:41:15 +0200
+
+sbsigntool (0.9.2-1) unstable; urgency=medium
+
+  * Add watch file
+  * New upstream version 0.9.2 (Closes: #920013, #828696)
+  * Remove test file after clean
+  * Refreshed quilt patches, and removed all that were merged
+  * Use priority optional
+
+ -- Pierre Chifflier <pollux@debian.org>  Mon, 21 Jan 2019 21:20:40 +0100
+
+sbsigntool (0.6-3.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix linker flags for test cases (Closes: #842446)
+
+ -- Ben Hutchings <ben@decadent.org.uk>  Sun, 29 Jan 2017 01:00:17 +0000
+
+sbsigntool (0.6-3.1) unstable; urgency=medium
+
+  * Non-maintainer upload with approval of maintainer
+  * Limit build-dependency on gcc-multilib to the architectures where it
+    is available, and disable tests where it is not
+  * Enable building on arm64 and armhf (Closes: #821144)
+  * Update OpenSSL API usage to support OpenSSL 1.1 (Closes: #828539)
+  * Remove incorrect Vcs-Bzr field
+
+ -- Ben Hutchings <ben@decadent.org.uk>  Sun, 26 Jun 2016 23:39:15 +0200
+
+sbsigntool (0.6-3) unstable; urgency=medium
+
+  * Add sbsign_check_write_return.patch: check return when writing
+    output file (Closes: #819987)
+  * Mark package as Multi-Arch: foreign (Closes: #820002)
+
+ -- Pierre Chifflier <pollux@debian.org>  Wed, 20 Apr 2016 09:34:26 +0200
+
+sbsigntool (0.6-2) unstable; urgency=medium
+
+  * Add missing build-dep on openssl (Closes: #816264)
+  * debian/patches/sbverify_clear_out_cert_content.patch: clear out the
+    contents part of the certificate we're building for signature
+    verification from the EFI binary, in sbverify; OpenSSL 1.0.2e now
+    enforces that there isn't data and content sections together.
+    Bakport from ubuntu patch (LP: #1526959)
+  * Bump Standards Version to 3.9.7
+
+ -- Pierre Chifflier <pollux@debian.org>  Tue, 08 Mar 2016 08:11:10 +0100
+
+sbsigntool (0.6-1) unstable; urgency=low
+
+  * Initial release (Closes: #702254)
+
+ -- Pierre Chifflier <pollux@debian.org>  Wed, 23 Sep 2015 08:40:56 +0200
